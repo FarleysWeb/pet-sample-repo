@@ -11,6 +11,10 @@ html {
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .top-section-wrapper {
 
     background-color: #001D37;
