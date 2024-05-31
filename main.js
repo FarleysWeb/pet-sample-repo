@@ -71,3 +71,22 @@ function petAge(birthYear) {
 
 }
 
+// Pet filter button code
+
+const allButtons = document.querySelectorAll(".pet-filter button");
+
+allButtons.forEach(button => {
+  button.addEventListener("click", handleButtonCLick);
+});
+
+function handleButtonCLick(clickEvent) {
+  // remove active class from all buttons
+  allButtons.forEach(button => {
+    button.classList.remove("active")
+  });
+
+  // add active class to clicked button
+  clickEvent.target.classList.add("active");
+
+  // fiilter pets
+}
