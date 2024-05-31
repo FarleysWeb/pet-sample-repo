@@ -214,6 +214,16 @@ html {
     color: #9F9F9F;
 }
 
+.pet-filter button:hover {
+    color: #707070;
+}
+
+.pet-filter .active,
+.pet-filter .active:hover {
+    color: #475AFF;
+    text-decoration: underline;
+}
+
 .site-footer {
     text-align: center;
     color: #a6a6a6;
