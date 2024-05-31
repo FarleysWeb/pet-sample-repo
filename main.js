@@ -36,6 +36,11 @@ async function petCall() {
     templateClone.querySelector("div.pet-card-photo img").src = pet.photo;
     templateClone.querySelector("div.pet-card-photo img").alt =
       "An image of a " + pet.species;
+
+    // if no pet photo insert a fallback image
+    if (!pet.photo) {
+      templateClone.querySelector("div.pet-card-photo img").src = "images/fallback.jpg";
+    }
     // Add new card to the document fragment for storage until loop is complete
     // then push to html will all the generated cards (faster then 1 by 1) 
     wrapper.appendChild(templateClone);
