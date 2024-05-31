@@ -30,10 +30,18 @@ async function petCall() {
     const templateClone = cardTemplate.content.cloneNode(true);
 
     // insert dynamic data
+
+    // add a dataset vriable to each pet cat
+    templateClone.querySelector(".pet-card").dataset.species = pet.species;
+    // add pet name to card
     templateClone.querySelector("h3").textContent = pet.name;
+    // add pet descriptiion to card
     templateClone.querySelector("p.pet-descrip").textContent = pet.description;
+    //add pet age to card
     templateClone.querySelector("p.pet-age").textContent = petAge(pet.birthYear);
+    //add pet image to card
     templateClone.querySelector("div.pet-card-photo img").src = pet.photo;
+    // add pet alt image description to card
     templateClone.querySelector("div.pet-card-photo img").alt =
       "An image of a " + pet.species;
 
@@ -89,4 +97,14 @@ function handleButtonCLick(clickEvent) {
   clickEvent.target.classList.add("active");
 
   // fiilter pets
+
+  const currentFilter = clickEvent.target.dataset.filter;
+  document.querySelectorAll(".pet-card").forEach(card => {
+    if (currentFilter == card.dataset.species || currentFilter == "all") {
+      card.style.display = "grid";
+    }
+    else {
+      card.style.display = "none";
+    }
+  });
 }
